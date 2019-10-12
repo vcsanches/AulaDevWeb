@@ -1,21 +1,17 @@
 <?php
-define("IP", "127.0.0.1");
-echo IP;
-echo "<br>";
-echo "<br>";
 
-$numero = 1;
-	echo $numero;
+header("Content-type: application/json");
+include("Filho.php");
 
-echo "<br>";
-echo "<br>";
+$pessoa = new Pessoa(2.00,70,55);
+//echo $pessoa;
 
-echo "Hello World";
+$filho = new Filho(2.00, 70, 10);
+$filho->setTimeDocoracao("Cruzeirão Cabuloso");
 
-echo "<br>";
-echo "<br>";
+//echo $filho;
+//echo "<br>".$Filho->getTimeDocCoracao()."<br>";
 
-$num1 = 1;
-$num2 = 2;
+echo json_encode($pessoa);
 
-echo("O resultado da soma é: ".($num1 + $num2));
+?>
