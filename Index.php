@@ -1,3 +1,4 @@
+﻿<meta charset="utf-8";
 <?php
 
 header("Content-type: application/json");
@@ -10,8 +11,19 @@ $filho = new Filho(2.00, 70, 10);
 $filho->setTimeDocoracao("Cruzeirão Cabuloso");
 
 //echo $filho;
-//echo "<br>".$Filho->getTimeDocCoracao()."<br>";
+//echo "<br>".$Filho->getTimeDoCoracao()."<br>";
 
-echo json_encode($pessoa);
+if ($filho->getTimeDoCoracao() == "Cruzeirao C"){
+	http_response_code(201);
+	echo json_encode($filho);
+
+}
+else{
+	http_response_code(404);
+	$resposta = array("message" => "Não existe");
+	echo json_encode($resposta);
+
+}
+
 
 ?>
